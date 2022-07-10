@@ -42,7 +42,7 @@ def coolyear(arg):
 
 def calendar(arg1):
     global añoc, mesc, cl
-    if True==True:
+    try:
         if "year" in arg1 and not "month" in arg1 and not "this month" in arg1 and not "this year" in arg1:
             año=arg1[arg1.find("year")+5:]
             calendario=cl.formatyear(int(año))
@@ -84,7 +84,7 @@ def calendar(arg1):
             colores(calendario)
         else:
             print(color("\n  Bad syntax","R"))
-    else:
+    except:
         print(color("\n  Bad syntax","R"))
 
         

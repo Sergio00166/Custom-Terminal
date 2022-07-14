@@ -51,13 +51,12 @@ def selector():
     buffer = []
     while extfx==True:
         if som==True and not len(buffer) == 0:
-            if keyboard.read_key() == "flecha abajo" and not consel == 0:
+            if keyboard.read_key() == "flecha abajo" and not consel <= 0:
                 clear()
                 if len(buffer) == 1:
                     keyboard.write(buffer[0])
                 else:
-                    if not consel == 0:
-                        consel -= 1
+                    consel -= 1
                     keyboard.write(buffer[consel])
             elif keyboard.read_key() == "flecha arriba" and not consel == len(buffer)-1:
                 clear()

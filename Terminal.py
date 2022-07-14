@@ -83,8 +83,9 @@ def selector():
                             buffer.append(y)
                             tmpbuff = []
                         break
+            delay(0.05)
         else:
-            delay(0.1)
+            delay(0.25)
 
 def main():
     global directory , buffer , database , som, extfx , fix

@@ -44,47 +44,50 @@ def init():
     from database import database
 
 def selector():
-    global buffer , som , extfx
+    global buffer , som , extfx , fix
     consel = 1
+    fix=False
     som = False
     extfx = True
     buffer = []
     while extfx==True:
         if som==True and not len(buffer) == 0:
-            if keyboard.read_key() == "flecha abajo" and not consel <= 0:
-                clear()
-                if len(buffer) == 1:
-                    keyboard.write(buffer[0])
-                else:
-                    consel -= 1
-                    keyboard.write(buffer[consel])
-            elif keyboard.read_key() == "flecha arriba" and not consel == len(buffer)-1:
-                clear()
-                if len(buffer) == 1:
-                    keyboard.write(buffer[0])
-                else:
-                    if not consel == len(buffer)-1:
+            if keyboard.read_key() == "flecha abajo":
+                if not consel == 0 or fix==True:
+                    clear()
+                    if len(buffer) == 1 or fix==True:
+                        keyboard.write(buffer[0])
+                        fix=False
+                    else:
+                        consel -= 1
+                        keyboard.write(buffer[consel])
+            if keyboard.read_key() == "flecha arriba":
+                if not consel == len(buffer)-1:
+                    clear()
+                    if len(buffer) == 1:
+                        keyboard.write(buffer[0])
+                    else:
                         consel += 1
-                    keyboard.write(buffer[consel])
-            if len(buffer) > 8:
+                        keyboard.write(buffer[consel])
+                fix=False
+            if len(buffer) >= 8:
                 contfix = 0
                 tmpbuff = []
-                for x in reversed(buffer):
+                for x in buffer:
                     if not contfix == 8:
                         tmpbuff.append(x)
                         contfix += 1
                     else:
                         buffer = []
-                        for y in reversed(tmpbuff):
+                        for y in tmpbuff:
                             buffer.append(y)
-                        tmpbuff = []
+                            tmpbuff = []
                         break
-            delay(0.001)
         else:
             delay(0.1)
 
 def main():
-    global directory , buffer , database , som, extfx
+    global directory , buffer , database , som, extfx , fix
     color("CODE")
     while True:
         buff = ""
@@ -119,6 +122,7 @@ def main():
                 som = False
                 directory = database(str.lower(buff),buff2,directory)
                 som = True
+                fix=True
 
 if __name__ == "__main__":
     thr(target=selector).start()

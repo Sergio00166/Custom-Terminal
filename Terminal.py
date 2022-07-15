@@ -17,12 +17,6 @@ from extbanner import main as ext
 #def color(arg,arg2=""): return arg
 os=system()
 
-def revert(arg):
-    exp = []
-    for x in reversed(arg):
-        exp.append(x)
-    return exp
-
 def clear():
     global os
     if os == "Windows":

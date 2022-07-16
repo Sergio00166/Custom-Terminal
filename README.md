@@ -104,6 +104,9 @@ prints the running process
 *kill* proc
 kills a process
 
+calc
+modes -cli (defaul) -gui
+
 *exit*
 exits the program
 

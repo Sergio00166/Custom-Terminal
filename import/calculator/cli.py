@@ -30,7 +30,7 @@ def Menu():
     print("                       █             21.- Borr. Pant.   22.- Menú       23.- Salir              █")
     print("                       █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█")
     print("")
- 
+
 def mcd(num1, num2):
     a = max(num1, num2)
     b = min(num1, num2)
@@ -46,23 +46,22 @@ def mcm(num1, num2):
     mcm = (a / mcd(a, b)) * b
     return mcm
  
-def cls():
+def borrarPantalla():
     if os.name == "posix":
         os.system ("clear")
     elif os.name == "ce" or os.name == "nt" or os.name == "dos":
         os.system ("cls")
  
 def Calculadora():
-    
+ 
     Menu()
+ 
     opc = int(input("Selecione nº de Opción: "))
-    
+ 
     while (opc >0 and opc <24):
-
-        cls()
-        Menu()
-        
+ 
         if (opc==1):
+            print("")
             num1 = int(input("Ingrese Primer Número: "))
             print("")
             num2 = int(input("Ingrese Segundo Número: "))
@@ -75,8 +74,7 @@ def Calculadora():
                 opc = 1
  
             elif Continuar == "n" or Continuar == "N":
-                cls()
-                Menu()
+                print("")
                 opc = int(input("Selecione nº de Opción: "))
  
             else:
@@ -714,7 +712,7 @@ def Calculadora():
                     aydopc = int(input("Selecione nº de Opción: "))
  
         elif(opc==21):
-            cls()
+            borrarPantalla()
             Menu()
             opc = int(input("Selecione nº de Opción: "))
  
@@ -723,8 +721,6 @@ def Calculadora():
             opc = int(input("Selecione nº de Opción: "))
  
         elif(opc==23):
-            cls()
-            print("")
             exit(0)
  
     while(opc <1 or opc >23 ):
@@ -734,5 +730,3 @@ def Calculadora():
         opc = int(input("Selecione nº de Opción: "))
  
 Calculadora()
-
-

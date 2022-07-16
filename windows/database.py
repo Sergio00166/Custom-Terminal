@@ -26,7 +26,7 @@ def database(arg,arg1,directory):
         find(arg,arg1,directory)
     elif arg=="move" or arg=="copy" or arg=="rename":
         cpacut(arg,arg1,directory)
-    elif arg=="edit" or arg=="link" or arg=="calc"
+    elif arg=="edit" or arg=="link" or arg=="calc":
         other(arg,arg1,directory)
     else:
         print(color("\n  Command not found\n","R"))

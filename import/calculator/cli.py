@@ -5,8 +5,10 @@ click en una versión de Python 3"""
 import math
 import os
 #Aquí importamos las librerías
- 
-__author__ = "HDB PROGRAMMING"
+
+
+__author__ = "HDB PROGRAMMING, modified by Sergio1260"
+
  
 def Menu():
  
@@ -44,22 +46,23 @@ def mcm(num1, num2):
     mcm = (a / mcd(a, b)) * b
     return mcm
  
-def borrarPantalla():
+def cls():
     if os.name == "posix":
         os.system ("clear")
     elif os.name == "ce" or os.name == "nt" or os.name == "dos":
         os.system ("cls")
  
 def Calculadora():
- 
+    
     Menu()
- 
     opc = int(input("Selecione nº de Opción: "))
- 
+    
     while (opc >0 and opc <24):
- 
+
+        cls()
+        Menu()
+        
         if (opc==1):
-            print("")
             num1 = int(input("Ingrese Primer Número: "))
             print("")
             num2 = int(input("Ingrese Segundo Número: "))
@@ -72,7 +75,8 @@ def Calculadora():
                 opc = 1
  
             elif Continuar == "n" or Continuar == "N":
-                print("")
+                cls()
+                Menu()
                 opc = int(input("Selecione nº de Opción: "))
  
             else:
@@ -710,7 +714,7 @@ def Calculadora():
                     aydopc = int(input("Selecione nº de Opción: "))
  
         elif(opc==21):
-            borrarPantalla()
+            cls()
             Menu()
             opc = int(input("Selecione nº de Opción: "))
  
@@ -719,6 +723,7 @@ def Calculadora():
             opc = int(input("Selecione nº de Opción: "))
  
         elif(opc==23):
+            cls()
             print("")
             exit(0)
  
@@ -729,3 +734,5 @@ def Calculadora():
         opc = int(input("Selecione nº de Opción: "))
  
 Calculadora()
+
+

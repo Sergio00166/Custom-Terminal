@@ -7,7 +7,7 @@ from threading import Thread as thr
 from time import sleep as delay
 from os import getcwd
 
-version="pre-alfa v0.0.6.7"
+version="pre-alfa v0.0.7.0"
 
 dirt=getcwd()
 path[5]=(dirt + chr(92) + "import")
@@ -16,6 +16,12 @@ from colors import color
 from extbanner import main as ext
 #def color(arg,arg2=""): return arg
 os=system()
+
+def revert(arg):
+    tmp1234=[]
+    for x in reversed(arg):
+        tmp1234.append(x)
+    return tmp1234         
 
 def clear():
     global os
@@ -123,5 +129,6 @@ if __name__ == "__main__":
     thr(target=selector).start()
     init()
     main()
+
 
 

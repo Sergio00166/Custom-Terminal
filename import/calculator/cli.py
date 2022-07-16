@@ -729,4 +729,11 @@ def Calculadora():
         print("")
         opc = int(input("Selecione nº de Opción: "))
  
-Calculadora()
+while True:
+    try:
+        Calculadora()
+    except:
+        print("\n  ERROR")
+        delay(0.75)
+        borrarPantalla()
+        continue

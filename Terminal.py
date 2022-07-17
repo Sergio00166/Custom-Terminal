@@ -7,7 +7,7 @@ from threading import Thread as thr
 from time import sleep as delay
 from os import getcwd
 
-version="pre-alfa v0.0.7.2"
+version="pre-alfa v0.0.7.4"
 
 dirt=getcwd()
 path[5]=(dirt + chr(92) + "import")

@@ -625,7 +625,7 @@ def Calculadora():
             while(aydopc > 0 and aydopc < 5):
                 if(aydopc==1):
                     print("")
-                    print("El creador de este programa es SOMEONE360 puede contactar con el mediante el correo tutiolinux@gmail.com")
+                    print("El creador de este programa es SOMEONE360 y modificado por Sergio1260")
                     print("")
                     Continuar = input("¿Desea Continuar con esta Opción?(S/N): ")
  
@@ -732,7 +732,7 @@ def Calculadora():
 while True:
     try:
         Calculadora()
-    except:
+    except ValueError:
         print("\n  ERROR")
         delay(0.75)
         borrarPantalla()

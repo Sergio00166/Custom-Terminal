@@ -607,7 +607,7 @@ def Calculadora():
  
         elif(opc==19):
             print("")
-            print("Calculadora Python ver. 1.5.0.2")
+            print("Calculadora Python ver. 2.0")
             print("")
             opc = int(input("Selecione nº de Opción: "))
  

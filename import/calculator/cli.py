@@ -721,6 +721,7 @@ def Calculadora():
             opc = int(input("Selecione nº de Opción: "))
  
         elif(opc==23):
+            print("")
             exit(0)
  
     while(opc <1 or opc >23 ):

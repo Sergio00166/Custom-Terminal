@@ -96,17 +96,20 @@ def loop():
         delay(0.5)
 
 def hwinfo(arg1):
-    global som
+    global som , fix
     if arg1=="-loop":
         som=1
         Thread(target=loop).start()
         cmd("pause" + fix)
         som=0
         cmd("CLS")
+    elif arg1=="-gui":
+        cmd("start Taskmgr")
+    elif arg1=="-gui -quit":
+        cmd("TASKKILL /F /IM Taskmgr.exe" + fix)
     else:
         cont()
         printer()
-        
     
 
 

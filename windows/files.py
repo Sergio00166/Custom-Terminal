@@ -59,7 +59,7 @@ def files(arg,arg1,directory):
             print("")
             for x in fic:
                 cont=cont+1
-                print(color(str(cont) + " " +  x,"B"))     
+                print(color("  " + str(cont) + " ","B") + color(x,"G"))     
         except:
             print(color("\n  Error\n", "R"))
 

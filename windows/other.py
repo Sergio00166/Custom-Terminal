@@ -17,8 +17,10 @@ def other(arg,arg1,directory):
             if "from" in arg1:
                 fro=arg1.find("from")
                 fich=arg1[:fro]
-                if not chr(92) in arg1[fro+5:] and len(arg1[fro+5:])==2:
+                if not chr(92) in arg1[fro+5:] and len(arg1[fro+5:])==2 and ":" in arg1[fro+5:]:
                     direct=arg1[fro+5:] + chr(92)
+                elif not chr(92) in arg1[fro+5:] and not ":" in arg1[fro+5:]:
+                    direct=directory + arg1[fro+5:] + chr(92)
                 else:
                     direct=arg1[fro+5:]
                 exp=direct + fich

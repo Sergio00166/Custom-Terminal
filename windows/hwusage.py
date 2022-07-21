@@ -110,6 +110,7 @@ def hwinfo(arg1):
     else:
         cont()
         printer()
+        print("")
         
     
 

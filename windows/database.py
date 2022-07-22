@@ -21,7 +21,7 @@ def database(arg,arg1,directory):
     elif (arg=="clear" or arg=="run" or arg=="natives"  or arg=="start"
           or arg=="ping" or arg=="tracert" or arg=="ip" or arg=="volumes"
           or arg=="repair" or arg=="time" or arg=="flushdns" or
-          arg=="running" or arg=="kill"):
+          arg=="running" or arg=="kill" or arg=="sys"):
         things(arg,arg1,directory)
     elif arg=="dirsize" or arg=="size" or arg=="dskinfo":
         sizes(arg,arg1,directory)

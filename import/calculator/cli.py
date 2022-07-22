@@ -21,6 +21,7 @@ def main():
         if not arg=="exit":
             work(arg)
         else:
+            print("")
             exit()
 
 if __name__=="__main__":

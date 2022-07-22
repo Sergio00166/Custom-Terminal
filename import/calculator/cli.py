@@ -7,12 +7,13 @@ def work(arg):
     arg=str(arg).replace("^","**")
     fic=open("tmp.py","w")
     fic.write("import math \n")
-    fic.write("print('Result:' , ")
+    fic.write("def operator(): \n")
+    fic.write("    print('Result:' , ")
     fic.write(arg)
     fic.write(")")
     fic.close()
-    import tmp
-    tmp()
+    from tmp import operator
+    operator()
     
 def main():
     arg=""

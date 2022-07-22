@@ -4,7 +4,6 @@ import math
 def work(arg):
     for x in dir(math):
         arg=str(arg).replace(x,"math."+x)
-    arg=str(arg).replace("^","**")
     fic=open("tmp.py","w")
     fic.write("import math \n")
     fic.write("def operator(): \n")

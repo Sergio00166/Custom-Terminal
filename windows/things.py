@@ -69,6 +69,8 @@ def things(arg,arg1,directory):
             cmd("TASKKILL /F /IM " + arg1)
         else:
             cmd("TASKKILL /F /IM " + arg1 + ".exe" + fix)
+    elif arg=="sys":
+        cmd("systeminfo.exe")
     print("")
 
     

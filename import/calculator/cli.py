@@ -11,7 +11,8 @@ def work(arg):
     fic.write(arg)
     fic.write(")")
     fic.close()
-    cmd("start /B /WAIT tmp.py")
+    import tmp
+    tmp()
     
 def main():
     arg=""

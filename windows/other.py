@@ -8,6 +8,7 @@ from colors import color
 
 impht = getcwd() + chr(92) + "import" + chr(92)
 clicalc = impht + "calculator" + chr(92) + "cli.py"
+clicalcfix = impht + "calculator" + chr(92)
 nano = getcwd() + "\windows\extras" + chr(92) + "nano.exe "
 
 def other(arg,arg1,directory):
@@ -63,9 +64,9 @@ def other(arg,arg1,directory):
         if arg1=="-GUI" or arg1=="-gui":
             cmd("START calc")
         elif arg1=="-cli" or arg1=="-CLI":
-            cmd("START /B /WAIT " + clicalc)
+            cmd("START /D " + clicalcfix + "/B /WAIT "  + clicalc)
         elif arg1=="":
-            cmd("START /B /WAIT " + clicalc)
+            cmd("START /D " + clicalcfix + "/B /WAIT "  + clicalc)
         else:
             print(color("\n  Bad syntax\n","R"))
 

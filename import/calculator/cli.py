@@ -1,7 +1,6 @@
 from os import system as cmd
 import math
 from sys import modules
-from time import sleep as delay
 
 def work(arg,mode):
     for x in dir(math):
@@ -21,10 +20,12 @@ def work(arg,mode):
             print("  Succesful added" , result)
             return result
         del modules["tmp"]
-    except ArithmeticError:
-        print("   Math error")
     except:
-        print("   Fatal error")
+        try:
+            del modules["tmp"]
+            print("   ERROR")
+        except:
+            print("   ERROR")
 
 def main():
     fix=False
@@ -48,7 +49,6 @@ def main():
                         arg=arg.replace(x,str(letters[x]))
                     work(arg,1)
             else:
-                print("")
                 exit()
 
 
@@ -56,3 +56,4 @@ if __name__=="__main__":
     print(" CLI CALCULATOR by Sergio1260")
     print(" version v0.2.5 - STABLE")
     main()
+

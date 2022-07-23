@@ -12,49 +12,47 @@ def work(arg,mode):
     fic.write("    return ")
     fic.write(arg)
     fic.close()
-    from tmp import operator
     try:
+        from tmp import operator
         if mode==1:
             print("  Result" , operator())
         elif mode==2:
             result = operator()
             print("  Succesful added" , result)
             return result
-    except:
-        print("    Math error")
-    del modules["tmp"]
-    
+        del modules["tmp"]
+    except ImportError:
+        print("   Fatal error")
+    except ArithmeticError:
+        print("   Math error")
+
 def main():
     fix=False
     arg=""
     letters={"a":0,"b":0,"c":0,"d":0}
     while True:
-        try:
-            if fix==True:
-                work(arg,3)
-                fix=False
-            else:
-                arg=input("\n Operation: ")
-                if not arg=="exit":
-                    if "set" in arg:
-                        #a=sin(12)
-                        letter=arg[arg.find("set(")+4:arg.find(")")]
-                        for x in letters:
-                            if x==letter:
-                               letters[x]=work(arg[arg.find(")")+1:],2)
-                               fix=True
-                    else:
-                        for x in letters:
-                            arg=arg.replace(x,str(letters[x]))
-                        work(arg,1) 
+        if fix==True:
+            work(arg,3)
+            fix=False
+        else:
+            arg=input("\n Operation: ")
+            if not arg=="exit":
+                if "set" in arg:
+                    letter=arg[arg.find("set(")+4:arg.find(")")]
+                    for x in letters:
+                        if x==letter:
+                            letters[x]=work(arg[arg.find(")")+1:],2)
+                            fix=True        
                 else:
-                    print("")
-                    exit()
-        except:
-            print("   FATAL ERROR")
+                    for x in letters:
+                        arg=arg.replace(x,str(letters[x]))
+                    work(arg,1)
+            else:
+                print("")
+                exit()
+
 
 if __name__=="__main__":
     print(" CLI CALCULATOR by Sergio1260")
-    print(" version v0.2.0 - STABLE")
+    print(" version v0.2.5 - STABLE")
     main()
-

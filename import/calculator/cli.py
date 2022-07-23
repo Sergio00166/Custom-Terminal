@@ -49,10 +49,12 @@ def main():
                         arg=arg.replace(x,str(letters[x]))
                     work(arg,1)
             else:
+                print("")
                 exit()
 
 
 if __name__=="__main__":
+    print("")
     print(" CLI CALCULATOR by Sergio1260")
     print(" version v0.2.5 - STABLE")
     main()

@@ -61,13 +61,15 @@ def other(arg,arg1,directory):
             + '" -Name "' + name + '" -Value "' + refer + '"' + fix)
 
     elif arg=="calc":
+        fix = " > " + getcwd() + chr(92) + "windows" + chr(92) + "null"
         if arg1=="-GUI" or arg1=="-gui":
             cmd("START calc")
         elif arg1=="-cli" or arg1=="-CLI":
             cmd("START /D " + clicalcfix + "/B /WAIT "  + clicalc)
+        elif arg1=="-gui -quit" or arg1=="-GUI -QUIT":
+            cmd("TASKKILL /F /IM CalculatorApp.exe" + fix)
         elif arg1=="":
             cmd("START /D " + clicalcfix + "/B /WAIT "  + clicalc)
         else:
             print(color("\n  Bad syntax\n","R"))
-
 

@@ -20,8 +20,6 @@ def work(arg,mode):
             result = operator()
             print("  Succesful added" , result)
             return result
-        else:
-            1+1
     except:
         print("    Math error")
     del modules["tmp"]

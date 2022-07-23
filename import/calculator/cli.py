@@ -21,10 +21,10 @@ def work(arg,mode):
             print("  Succesful added" , result)
             return result
         del modules["tmp"]
-    except ImportError:
-        print("   Fatal error")
     except ArithmeticError:
         print("   Math error")
+    except:
+        print("   Fatal error")
 
 def main():
     fix=False
